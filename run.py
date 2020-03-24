@@ -13,7 +13,7 @@ PORT_NUMBER = Config.getint('HTTPConfig', 'PORT_NUMBER')
 
 dry_bread = drybreadfactory.get_dry_bread()
 
-#Generating json for DB response9
+#Generating json for DB response0
 response = {}
 response["question"] = dry_bread[0]
 response["answer"] = dry_bread[1]
