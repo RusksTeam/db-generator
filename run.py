@@ -8,7 +8,7 @@ import drybreadfactory
 Config = configparser.ConfigParser();
 Config.read("config/server.ini")
 HOST_NAME = Config.get('HTTPConfig', 'HOST_NAME')
-PORT_NUMBER = Config.getint('HTTPConfig', 'PORT_NUMBER')
+PORT_NUMBER = int(os.environ.get('PORT', Config.getint('HTTPConfig', 'PORT_NUMBER')))
 
 
 dry_bread = drybreadfactory.get_dry_bread()
