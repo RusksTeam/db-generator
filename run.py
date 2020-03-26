@@ -4,7 +4,7 @@ import time
 import configparser
 import json
 import drybreadfactory
-https://devcenter.heroku.com/articles/buildpacks
+
 Config = configparser.ConfigParser();
 Config.read("config/server.ini")
 HOST_NAME = Config.get('HTTPConfig', 'HOST_NAME')
