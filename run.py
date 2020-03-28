@@ -22,8 +22,6 @@ response_string = json.dumps(response, ensure_ascii=False, indent=4)
 
 httpd = DBServer((HOST_NAME, PORT_NUMBER), DBRequestHandler)
 httpd.set_dry_bread(response_string, mime="application/json")
-#httpd.set_dry_bread('<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"></head><body><h1>Po co kotu telefon?</h1><h1>Żeby MIAU</h1></body></html>', mime="text/html")
-
 
 print(time.asctime(), "Server Starts - %s:%s" % (HOST_NAME, PORT_NUMBER))
 try:
