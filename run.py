@@ -11,10 +11,9 @@ print('Running on', platform.system(), 'system')
 if platform.system() == 'Windows':
     shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
 else:#linux
-    with open(global_cfg['shared_mem']['drybread_tag'], 'w') as f:
-        f.write('0')
-    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_APPEND)
-    shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_READ)
+    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
+    assert os.write(fd, '\x00' * mmap.PAGESIZE) == mmap.PAGESIZE
+    buf = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_WRITE | mmap.PROT_READ)
 
 
 @app.before_first_request
@@ -30,6 +29,12 @@ def display_drybread():
     shm.seek(0)
     current_drybread = dbg.get_drybread_at_index(db_index)
     return '<h1>' + current_drybread['q'] + "</h1><h1>" + current_drybread['a'] + "</h1>"
+
+@app.route('/reroll')
+def reroll_drybread():
+    db_index = dbg.get_random_drybread_index()
+    shm.write(bytes([db_index]))
+    shm.seek(0)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', global_cfg['server']['port_number']))

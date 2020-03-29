@@ -9,8 +9,8 @@ import os
 if platform.system() == 'Windows':
     shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
 else:#linux
-    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_RDONLY)
-    shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)
+    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
+    buf = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_WRITE | mmap.PROT_READ)
 
 
 def reroll_drybread():
