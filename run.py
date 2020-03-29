@@ -1,11 +1,25 @@
 from flask import Flask
 from  drybreadcfg import global_cfg
+import drybreadgenerator as dbg
 import os
+from mmap import mmap
 app = Flask(__name__)
 
+shm = mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
+
+@app.before_first_request
+def load_first_drybread():
+    db_index = dbg.get_random_drybread_index()
+    print('random db_index:', db_index)
+    shm.write(bytes([db_index]))
+    shm.seek(0)
+
 @app.route('/suchar')
-def get_dry_bread():
-    return "Po co kotu telefon?" + " " + "Żeby MIAU"
+def display_drybread():
+    db_index = int.from_bytes(shm.readline(), 'little')
+    shm.seek(0)
+    current_drybread = dbg.get_drybread_at_index(db_index)
+    return '<h1>' + current_drybread['q'] + "</h1><h1>" + current_drybread['a'] + "</h1>"
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', global_cfg['server']['port_number']))

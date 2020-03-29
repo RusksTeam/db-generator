@@ -1,0 +1,111 @@
+{
+    "suchary" : [
+        {
+            "q" : "Po co kotu telefon?",
+            "a" : "Żeby MIAU"
+        },
+        {
+            "q" : "Czym się mierzy piach?",
+            "a" : "Sandomierzem"
+        },
+        {
+            "q" : "W jaką część ciała idzie alkohol?",
+            "a" : "Wóda"
+        },
+        {
+            "q" : "Co zamówił alkoholik w sklepie z galanteriąskórzaną?",
+            "a" : "Seteczkę"
+        },
+        {
+            "q" : "Jak nazywają się ulubione czipsy hydraulika?",
+            "a" : "Kranczips"
+        },
+        {
+            "q" : "Jaki jest magik, kiedy straci pracę?",
+            "a" : "Rozczarowany"
+        },
+        {
+            "q" : "Jaki jest ulubiony program kanibalów",
+            "a" : "Surowi rodzice"
+        },
+        {
+            "q" : "Co mówi Japończyk, gdy widzi okno?",
+            "a" : "Toshiba"
+        },
+        {
+            "q" : "Jak matematyk wyłącza światło?",
+            "a" : "Przed nawias"
+        },
+        {
+            "q" : "Przychodzi narząd wewnętrzny do biura detektywistycznego i mówi:",
+            "a" : "Wydaje mi się, że jestem śledziona"
+        },
+        {
+            "q" : "Jakie jest motto cukierników?",
+            "a" : "Ciasto pieniądz"
+        },
+        {
+            "q" : "Dlacazego najlepiej ładować baterie kiedy cały księżyc jest widoczny?",
+            "a" : "Bo wtedy masz pewność, że bateria zostanie naładowana w pełni"
+        },
+        {
+            "q" : "Jak inaczej można mówić na ramię Anny?",
+            "a" : "Armani"
+        },
+        {
+            "q" : "Dlaczego dzieci biegają przerażone po klasie i krzyczą?",
+            "a" : "Bo panikarze"
+        },
+        {
+            "q" : "O czym marzy porywacz z zatwardzenie?",
+            "a" : "Okupie"
+        },
+        {
+            "q" : "Jak nazywa się samolot przewożący owce?",
+            "a" : "Transportowiec"
+        },
+        {
+            "q" : "W jaki sposób seksoholik lubi płacić najbardziej?",
+            "a" : "Zbliżeniowo"
+        },
+        {
+            "q" : "Jak nazywa się moment przed ugryzieniem bułki?",
+            "a" : "Preambuła"
+        },
+        {
+            "q" : "Jaki zespół rockowy grał blisko samochodu dostawczego?",
+            "a" : "Nirvana"
+        },
+        {
+            "q" : "Dlaczego basen to jedyne miejsce, w którym laski mogą mieć mokro na widok rudego?",
+            "a" : "Bo ma czepek"
+        },
+        {
+            "q" : "Co robi 9,50zł w portfelu?",
+            "a" : "Ledwo dycha"
+        },
+        {
+            "q" : "Dlaczego w gimnazjum nie zrobili jasełek?",
+            "a" : "Bo nie znaleźli dziewicy"
+        },
+        {
+            "q" : "Co odpowie mama, gdy Jasiu powie, że dzisiaj śniła mu się Marysia",
+            "a" : "Nine szkodzi, wypiorę"
+        },
+        {
+            "q" : "Co mówi facet uprawiający seks z Grodzką?",
+            "a" : "Jestem w transie"
+        },
+        {
+            "q" : "Dlaczego ściany nie toczą ze sobą wojen?",
+            "a" : "Bo między nimi jest pokój"
+        },
+        {
+            "q" : "Jak nazywa się zmienna przechowująca litery Marysi?",
+            "a" : "chary_mary"
+        }
+    ]
+}
+
+
+
