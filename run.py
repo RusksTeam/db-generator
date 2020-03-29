@@ -14,7 +14,7 @@ else:#linux
     with open(global_cfg['shared_mem']['drybread_tag'], 'w') as f:
         f.write('0')
     fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_APPEND)
-    shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)
+    shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_READ)
 
 
 @app.before_first_request
