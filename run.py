@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 print('Running on', platform.system(), 'system')
-if platform.system() != 'Windows':
+if platform.system() == 'Windows':
     shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
 else:#linux
     with open(global_cfg['shared_mem']['drybread_tag'], 'w') as f:
