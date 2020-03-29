@@ -1,7 +1,7 @@
 
 from  drybreadcfg import global_cfg
 import drybreadgenerator as dbg
-from mmap import mmap
+import mmap
 import sys
 import platform
 import os
@@ -9,7 +9,7 @@ import os
 if platform.system() == 'Windows':
     shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
 else:#linux - for heroku
-    fd = os.open('/tmp/' + global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
+    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
     shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)
 
 
