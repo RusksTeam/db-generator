@@ -2,10 +2,10 @@ from flask import Flask
 from  drybreadcfg import global_cfg
 import drybreadgenerator as dbg
 import os
-import mmap
+from mmap import mmap
 app = Flask(__name__)
 
-shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
+shm = mmap(0, 4, tagname=global_cfg['shared_mem']['drybread_tag'])
 
 @app.before_first_request
 def load_first_drybread():

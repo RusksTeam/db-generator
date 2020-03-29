@@ -4,7 +4,7 @@ import drybreadgenerator as dbg
 from mmap import mmap
 import sys
 
-shm = mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
+shm = mmap(0, 4, tagname=global_cfg['shared_mem']['drybread_tag'])
 
 def reroll_drybread():
     db_index = dbg.get_random_drybread_index()
