@@ -8,17 +8,18 @@ app = Flask(__name__)
 
 
 print('Running on', platform.system(), 'system')
-if platform.system() == 'Windows':
+if platform.system() != 'Windows':
     shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
 else:#linux
     with open(global_cfg['shared_mem']['drybread_tag'], 'w') as f:
         f.write('0')
-    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_RDONLY)
+    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_APPEND)
     shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)
 
 
 @app.before_first_request
 def load_first_drybread():
+    shm.seek(0)
     db_index = dbg.get_random_drybread_index()
     shm.write(bytes([db_index]))
     shm.seek(0)
