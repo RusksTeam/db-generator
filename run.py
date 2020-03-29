@@ -8,12 +8,12 @@ app = Flask(__name__)
 
 
 print('Running on', platform.system(), 'system')
-if platform.system() == 'Windows':
+if platform.system() != 'Windows':
     shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
 else:#linux
     fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
-    assert os.write(fd, '\x00' * mmap.PAGESIZE) == mmap.PAGESIZE
-    buf = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_WRITE | mmap.PROT_READ)
+    os.write(fd, b'\x00')
+    shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_WRITE | mmap.PROT_READ)
 
 
 @app.before_first_request
