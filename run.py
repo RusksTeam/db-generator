@@ -10,11 +10,10 @@ app = Flask(__name__)
 print('Running on', platform.system(), 'system')
 if platform.system() == 'Windows':
     shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
-    shm.seek(0)
 else:#linux
     with open(global_cfg['shared_mem']['drybread_tag'], 'w') as f:
         f.write('0')
-    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
+    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_RDONLY)
     shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)
 
 
