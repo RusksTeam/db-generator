@@ -90,7 +90,7 @@
         },
         {
             "q" : "Co odpowie mama, gdy Jasiu powie, że dzisiaj śniła mu się Marysia",
-            "a" : "Nine szkodzi, wypiorę"
+            "a" : "Nie szkodzi, wypiorę"
         },
         {
             "q" : "Co mówi facet uprawiający seks z Grodzką?",

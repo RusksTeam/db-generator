@@ -3,8 +3,15 @@ from  drybreadcfg import global_cfg
 import drybreadgenerator as dbg
 from mmap import mmap
 import sys
+import platform
+import os
 
-shm = mmap(0, 4, tagname=global_cfg['shared_mem']['drybread_tag'])
+if platform.system() == 'Windows':
+    shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
+else:
+    fd = os.open('/tmp/' + global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
+    shm = mmap.mmap(fd, 4, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)
+
 
 def reroll_drybread():
     db_index = dbg.get_random_drybread_index()

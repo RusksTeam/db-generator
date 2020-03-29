@@ -2,10 +2,18 @@ from flask import Flask
 from  drybreadcfg import global_cfg
 import drybreadgenerator as dbg
 import os
-from mmap import mmap
+import mmap
+import platform
 app = Flask(__name__)
 
-shm = mmap(0, 4, tagname=global_cfg['shared_mem']['drybread_tag'])
+
+print('Running on', platform.system(), 'system')
+if platform.system() == 'Windows':
+    shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
+else:
+    fd = os.open('/tmp/' + global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
+    shm = mmap.mmap(fd, 4, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)
+
 
 @app.before_first_request
 def load_first_drybread():
