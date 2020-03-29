@@ -13,7 +13,7 @@ if platform.system() == 'Windows':
     shm.seek(0)
 else:#linux
     with open(global_cfg['shared_mem']['drybread_tag'], 'wb') as f:
-        f.write(0)
+        f.write(bytes([0]))
     fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
     shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_READ | mmap.PROT_WRITE)
 
