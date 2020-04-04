@@ -13,7 +13,7 @@
             "a" : "Wóda"
         },
         {
-            "q" : "Co zamówił alkoholik w sklepie z galanteriąskórzaną?",
+            "q" : "Co zamówił alkoholik w sklepie z galanterią skórzaną?",
             "a" : "Seteczkę"
         },
         {
@@ -45,7 +45,7 @@
             "a" : "Ciasto pieniądz"
         },
         {
-            "q" : "Dlacazego najlepiej ładować baterie kiedy cały księżyc jest widoczny?",
+            "q" : "Dlaczego najlepiej ładować baterie kiedy cały księżyc jest widoczny?",
             "a" : "Bo wtedy masz pewność, że bateria zostanie naładowana w pełni"
         },
         {

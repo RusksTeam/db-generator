@@ -1,43 +1,37 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for, flash
 from  drybreadcfg import global_cfg
+from hashlib import sha224
 import drybreadgenerator as dbg
 import os
 import mmap
 import platform
+
 app = Flask(__name__)
-
-
-print('Running on', platform.system(), 'system')
-if platform.system() == 'Windows':
-    shm = mmap.mmap(0, 4, global_cfg['shared_mem']['drybread_tag'])
-else:#linux
-    fd = os.open(global_cfg['shared_mem']['drybread_tag'], os.O_CREAT | os.O_TRUNC | os.O_RDWR)
-    os.write(fd, b'\x00')
-    shm = mmap.mmap(fd, 0, mmap.MAP_SHARED, mmap.PROT_WRITE | mmap.PROT_READ)
-
-
-@app.before_first_request
-def load_first_drybread():
-    shm.seek(0)
-    db_index = dbg.get_random_drybread_index()
-    shm.write(bytes([db_index]))
-    shm.seek(0)
+app.config['SECRET_KEY'] = 'my turbo secret key 948553098759874mfdnjeoiu'
+current_drybread = dbg.get_random_drybread()
 
 @app.route('/suchar')
+@app.route('/')
 def display_drybread():
-    db_index = int.from_bytes(shm.readline(), 'little')
-    shm.seek(0)
-    current_drybread = dbg.get_drybread_at_index(db_index)
-    return '<h1>' + current_drybread['q'] + "</h1><h1>" + current_drybread['a'] + "</h1>"
+    return render_template('suchar.html', q = current_drybread['q'], a = current_drybread['a'])
 
-@app.route('/reroll')
+@app.route('/reroll', methods = ['POST', 'GET'])
 def reroll_drybread():
-    db_index = dbg.get_random_drybread_index()
-    shm.write(bytes([db_index]))
-    shm.seek(0)
+    if request.method == 'POST':
+        key_hash = sha224(request.form['key'].encode('utf-8')).hexdigest()
+        if key_hash == '4135e2a7743f8d4345c66ff79440dd20ddfe76af91aed8b8d9c0dc61':
+            global current_drybread
+            current_drybread = dbg.get_random_drybread()
+            flash('Drybread has been successfully rerolled.')
+        else:
+            flash("Wrong key. Did not reroll.")
+        return redirect(url_for('display_drybread'))
+
+    else:
+        return render_template('reroll.html')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', global_cfg['server']['port_number']))
-    app.run(host=global_cfg['server']['host_name'], port=port)
+    app.run(debug = True)
 
 
