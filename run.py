@@ -32,6 +32,6 @@ def reroll_drybread():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', global_cfg['server']['port_number']))
-    app.run(debug = True)
+    app.run(host = global_cfg['server']['host_name'], port = port)
 
 
