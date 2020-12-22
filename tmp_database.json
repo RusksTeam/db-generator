@@ -2,110 +2,133 @@
     "suchary" : [
         {
             "q" : "Po co kotu telefon?",
-            "a" : "Żeby MIAU"
+            "a" : "Żeby MIAU",
+            "type" : 0
         },
         {
             "q" : "Czym się mierzy piach?",
-            "a" : "Sandomierzem"
+            "a" : "Sandomierzem",
+            "type" : 0
         },
         {
             "q" : "W jaką część ciała idzie alkohol?",
-            "a" : "Wóda"
+            "a" : "Wóda",
+            "type" : 0
         },
         {
             "q" : "Co zamówił alkoholik w sklepie z galanterią skórzaną?",
-            "a" : "Seteczkę"
+            "a" : "Seteczkę",
+            "type" : 0
         },
         {
             "q" : "Jak nazywają się ulubione czipsy hydraulika?",
-            "a" : "Kranczips"
+            "a" : "Kranczips",
+            "type" : 0
         },
         {
             "q" : "Jaki jest magik, kiedy straci pracę?",
-            "a" : "Rozczarowany"
+            "a" : "Rozczarowany",
+            "type" : 0
         },
         {
-            "q" : "Jaki jest ulubiony program kanibalów",
-            "a" : "Surowi rodzice"
+            "q" : "Jaki jest ulubiony program kanibalów?",
+            "a" : "Surowi rodzice",
+            "type" : 0
         },
         {
             "q" : "Co mówi Japończyk, gdy widzi okno?",
-            "a" : "Toshiba"
+            "a" : "Toshiba",
+            "type" : 0
         },
         {
             "q" : "Jak matematyk wyłącza światło?",
-            "a" : "Przed nawias"
+            "a" : "Przed nawias.",
+            "type" : 0
         },
         {
-            "q" : "Przychodzi narząd wewnętrzny do biura detektywistycznego i mówi:",
-            "a" : "Wydaje mi się, że jestem śledziona"
+            "q" : "Co powie narząd wewnętrzny, przychodząc do biura detektywistycznego?",
+            "a" : "Wydaje mi się, że jestem śledziona.",
+            "type" : 0
         },
         {
             "q" : "Jakie jest motto cukierników?",
-            "a" : "Ciasto pieniądz"
+            "a" : "Ciasto pieniądz.",
+            "type" : 0
         },
         {
             "q" : "Dlaczego najlepiej ładować baterie kiedy cały księżyc jest widoczny?",
-            "a" : "Bo wtedy masz pewność, że bateria zostanie naładowana w pełni"
+            "a" : "Bo wtedy masz pewność, że bateria zostanie naładowana w pełni.",
+            "type" : 0
         },
         {
             "q" : "Jak inaczej można mówić na ramię Anny?",
-            "a" : "Armani"
+            "a" : "Armani",
+            "type" : 0
         },
         {
             "q" : "Dlaczego dzieci biegają przerażone po klasie i krzyczą?",
-            "a" : "Bo panikarze"
+            "a" : "Bo panikarze.",
+            "type" : 0
         },
         {
-            "q" : "O czym marzy porywacz z zatwardzenie?",
-            "a" : "Okupie"
+            "q" : "O czym marzy porywacz z zatwardzeniem?",
+            "a" : "Okupie",
+            "type" : 1
         },
         {
             "q" : "Jak nazywa się samolot przewożący owce?",
-            "a" : "Transportowiec"
+            "a" : "Transportowiec",
+            "type" : 0
         },
         {
             "q" : "W jaki sposób seksoholik lubi płacić najbardziej?",
-            "a" : "Zbliżeniowo"
+            "a" : "Zbliżeniowo",
+            "type" : 1
         },
         {
             "q" : "Jak nazywa się moment przed ugryzieniem bułki?",
-            "a" : "Preambuła"
+            "a" : "Preambuła",
+            "type" : 0
         },
         {
             "q" : "Jaki zespół rockowy grał blisko samochodu dostawczego?",
-            "a" : "Nirvana"
+            "a" : "Nirvana",
+            "type" : 0
         },
         {
             "q" : "Dlaczego basen to jedyne miejsce, w którym laski mogą mieć mokro na widok rudego?",
-            "a" : "Bo ma czepek"
+            "a" : "Bo ma czepek.",
+            "type" : 1
         },
         {
             "q" : "Co robi 9,50zł w portfelu?",
-            "a" : "Ledwo dycha"
+            "a" : "Ledwo dycha.",
+            "type" : 0
         },
         {
             "q" : "Dlaczego w gimnazjum nie zrobili jasełek?",
-            "a" : "Bo nie znaleźli dziewicy"
+            "a" : "Bo nie znaleźli dziewicy.",
+            "type" : 1
         },
         {
-            "q" : "Co odpowie mama, gdy Jasiu powie, że dzisiaj śniła mu się Marysia",
-            "a" : "Nie szkodzi, wypiorę"
+            "q" : "Co odpowie mama, gdy Jasiu powie, że dzisiaj śniła mu się Marysia?",
+            "a" : "Nie szkodzi, wypiorę.",
+            "type" : 1
         },
         {
             "q" : "Co mówi facet uprawiający seks z Grodzką?",
-            "a" : "Jestem w transie"
+            "a" : "Jestem w transie.",
+            "type" : 1
         },
         {
             "q" : "Dlaczego ściany nie toczą ze sobą wojen?",
-            "a" : "Bo między nimi jest pokój"
+            "a" : "Bo między nimi jest pokój.",
+            "type" : 0
         },
         {
             "q" : "Jak nazywa się zmienna przechowująca litery Marysi?",
-            "a" : "chary_mary"
+            "a" : "chary_mary",
+            "type" : 0
         }
     ]
 }
-
-
-

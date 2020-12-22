@@ -1,0 +1,1 @@
+config = {'JOKE_TYPE': 0}
